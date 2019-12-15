@@ -335,7 +335,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-8">
                         <div class="contact-form">
-                            <form class="gform pure-form pure-form-stacked" method="POST" data-email="ele.tumanov@gmail.com" action="https://script.google.com/macros/s/AKfycbzEEGAQmQ5vQKL5zF-RFBquSoWiXfPI7hrH1RppRtlkWNojCwQ/exec">
+                            <form id="contact-form" class="gform pure-form pure-form-stacked" method="POST" data-email="ele.tumanov@gmail.com" action="https://script.google.com/macros/s/AKfycbzEEGAQmQ5vQKL5zF-RFBquSoWiXfPI7hrH1RppRtlkWNojCwQ/exec">
                                 <div class="form-elements">
                                     <div class="form-double">
                                         <input type="text" id="form-name" name="form-name" placeholder="NOMINATIVO" required="required">
@@ -343,8 +343,10 @@
                                     </div>
                                     <div class="form-double">
                                         <input type="number" name="number" placeholder="CELLULARE" required="required">
-                                        <input type="email" name="form-email" name= "email"  placeholder="MAIL" required="required">
-                                       
+                                        <input type="email" name= "email" id="form-email" placeholder="MAIL" required="required">
+                                        <span class="email-invalid" style="display:none">
+                                            Must be a valid email address
+                                        </span>
                                     </div>
                                     <textarea name="message" id="message" id="message" rows="5" required="required" placeholder="MESSAGGIO"></textarea>
                                     <button class="bttn bttn-primary">Send Now</button>
