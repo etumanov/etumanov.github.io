@@ -79,8 +79,8 @@
         padding: 0 30px;
         background: #87b5ff;
         background: -webkit-gradient(linear, left top, right top, from(#87b5ff), to(#99d4ef));
-        background: linear-gradient(to right, #87b5ff 0%, #99d4ef 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87b5ff', endColorstr='#99d4ef', GradientType=1);
+        background: linear-gradient(to right, #751718 0%, #ffc0cb 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#751718', endColorstr='#ffc0cb', GradientType=1);
         text-align: center;
     }
     .mainmenu-area .navbar-toggle {
