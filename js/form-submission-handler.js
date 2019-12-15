@@ -6,10 +6,8 @@
 
   function validateHuman(honeypot) {
     if (honeypot) {  //if hidden form filled up
-      console.log("Robot Detected!");
       return true;
     } else {
-      console.log("Welcome Human!");
     }
   }
 
@@ -55,7 +53,6 @@
     formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
     formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
 
-    console.log(formData);
     return formData;
   }
 
@@ -84,8 +81,6 @@
       // xhr.withCredentials = true;
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function() {
-          console.log(xhr.status, xhr.statusText);
-          console.log(xhr.responseText);
           var formElements = form.querySelector(".form-elements")
           if (formElements) {
             formElements.style.display = "none"; // hide form
@@ -105,7 +100,6 @@
   }
   
   function loaded() {
-    console.log("Contact form submission handler loaded successfully.");
     // bind to the submit event of our form
     var forms = document.querySelectorAll("form.gform");
     for (var i = 0; i < forms.length; i++) {
