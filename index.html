@@ -54,18 +54,15 @@
                     <div class="collapse navbar-collapse navbar-right" id="mainmenu">
                         <ul class="nav navbar-nav navbar-right help-menu">
                             <li><a href=""></a></li>
-                             <!-- <li class="select-cuntry">
-                               <select name="counter" id="counter">
-                                    <option value="ENG">ENG</option> 
-                                    <option value="BEN">CZ</option>
+                            <li class="select-cuntry">
+                                <select name="counter" id="counter" onChange="window.location.href=this.value">
+                                    <option value="#" hidden>
+                                        <span>&#9872;</span>
+                                    </option>
+                                    <option value="https://goout.net/en/prague/">EN</option>
+                                    <option value="https://goout.net/cs/prague/">CZ</option>
                                 </select> 
-                            </li> -->
-                            <li class="select-cuntry" id="counter">
-                               <li onclick="toggleLanguage('English')"><a href="https://goout.net/">EN</a></li>
-                               <li onclick="toggleLanguage('Czech')"><a href="https://goout.net/">CZ</a></li>
-                            </li> 
-                               
-                                
+                            </li>
                         </ul>
                         <ul class="nav navbar-nav primary-menu">
                             <li class="active"><a href="#home-area">Home</a></li>
@@ -254,11 +251,6 @@
         </div>
     </section>
 
-
-
-
-
-
     <section class="section-padding" id="service-area">
         <div class="container">
             <div class="row">
@@ -327,9 +319,6 @@
             </div>
         </div>
     </section>
-
-
-
 
     <!-- Contact-Area -->
     <section id="contact-area">
@@ -404,10 +393,10 @@
                                 <a href="#"><i class="icofont icofont-social-skype"></i></a>
                                 <a href="#"><i class="icofont icofont-social-instagram"></i></a>
                             </div>
-                            <div class="map" style="padding-top: 25px;">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.443016190126!2d14.443660115951536!3d50.077991922012586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b949b4ba8d22d%3A0x10659291560ac944!2sU%20Kan%C3%A1lky%201441%2F7%2C%20120%2000%20Vinohrady%2C%20Czechia!5e0!3m2!1sen!2s!4v1576371546392!5m2!1sen!2s" width="270" height="220" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                            </div>
                         </div>
+                    </div>
+                    <div class="col-xs-12 col-md-12" style="padding-top: 25px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.443016190126!2d14.443660115951536!3d50.077991922012586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b949b4ba8d22d%3A0x10659291560ac944!2sU%20Kan%C3%A1lky%201441%2F7%2C%20120%2000%20Vinohrady%2C%20Czechia!5e0!3m2!1sen!2s!4v1576371546392!5m2!1sen!2s" width="1140" height="1000" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                     </div>
                 </div>
             </div>
@@ -427,7 +416,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="https://colorlib.com" target="_blank">Pod Lampou</a></p>
+                        <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="https://www.podlampou.com/" target="_blank">Pod Lampou</a></p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                 </div>
@@ -435,7 +424,6 @@
         </div>
     </footer>
     <!-- Footer-Area / -->
-
 
     <!--Vendor-JS-->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
@@ -454,18 +442,4 @@
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
 </body>
-
-<!--Language-->
-<script>
-    function toggleDescriptor(language) {
-        let description = document.getElementById("description");
-        if (language === "English") {
-            description.innerHTML = "Show English";
-        }
-        else {
-            description.innerHTML = "Show Czech";
-        }  
-    }
-</script>
-
 </html>
