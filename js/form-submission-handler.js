@@ -4,19 +4,20 @@
     return re.test(email);
   }
 
-  function validateHuman(honeypot) {
-    if (honeypot) {  //if hidden form filled up
-      return true;
-    } else {
-    }
-  }
-
-  // get all data in form and return object
   function getFormData(form) {
     var elements = form.elements;
+    var honeypot;
 
-    var fields = Object.keys(elements).filter(function(k) {
-          return (elements[k].name !== "honeypot");
+  // get all data in form and return object
+    function getFormData(form) {
+    var elements = form.elements;
+    var honeypot;
+   var fields = Object.keys(elements).filter(function(k) {
+      if (elements[k].name === "honeypot") {
+        honeypot = elements[k].value;
+        return false;
+      }
+      return true;
     }).map(function(k) {
       if(elements[k].name !== undefined) {
         return elements[k].name;
