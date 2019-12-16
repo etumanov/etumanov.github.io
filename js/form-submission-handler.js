@@ -61,7 +61,7 @@
     event.preventDefault();           // we are submitting via xhr below
     var form = event.target;
     var formData = getFormData(form);
-    var data = formData.data;         // get the values submitted in the form
+    var data = getFormData(form);         // get the values submitted in the form formData.data
    
 
     /* OPTION: Remove this comment to enable SPAM prevention, see README.md */
