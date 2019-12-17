@@ -4,21 +4,19 @@
     return re.test(email);
   }
 
-  function getFormData(form) {
-    var elements = form.elements;
-    var honeypot;
+  function validateHuman(honeypot) {
+    if (honeypot) {  //if hidden form filled up
+      return true;
+    } else {
+      // #
+    }
+  }
 
   // get all data in form and return object
-    function getFormData(form) {
+  function getFormData(form) {
     var elements = form.elements;
-    var honeypot;
-   var fields = Object.keys(elements).filter(function(k) {
-      if (elements[k].name === "honeypot") {
-        honeypot = elements[k].value;
-        return false;
-      }
-      return true;
-    }).map(function(k) {
+
+    var fields = Object.keys(elements).map(function(k) {
       if(elements[k].name !== undefined) {
         return elements[k].name;
       // special case for Edge's html collection
@@ -54,21 +52,17 @@
     formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
     formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
 
-     return {data: formData, honeypot: honeypot};
+    return formData;
   }
 
   function handleFormSubmit(event) {  // handles form submit without any jquery
     event.preventDefault();           // we are submitting via xhr below
     var form = event.target;
-    var formData = getFormData(form);
-    var data = getFormData(form);         // get the values submitted in the form formData.data
-   
+    var data = getFormData(form);         // get the values submitted in the form
 
-    /* OPTION: Remove this comment to enable SPAM prevention, see README.md */
-    if (formData(data.honeypot)) {  //if form is filled, form will not be submitted
+    if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
       return false;
     }
-    
 
     if( data.email && !validEmail(data.email) ) {   // if email is not valid show error
       var invalidEmail = form.querySelector(".email-invalid");
